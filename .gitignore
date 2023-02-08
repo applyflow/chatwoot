@@ -32,6 +32,9 @@ master.key
 
 public/uploads
 public/packs*
+public/assets
+
+vendor/cache
 
 # VIM files
 *.swp

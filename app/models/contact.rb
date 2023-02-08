@@ -32,8 +32,8 @@ class Contact < ApplicationRecord
                     format: { with: Devise.email_regexp, message: I18n.t('errors.contacts.email.invalid') }
   validates :identifier, allow_blank: true, uniqueness: { scope: [:account_id] }
   validates :phone_number,
-            allow_blank: true, uniqueness: { scope: [:account_id] },
-            format: { with: /\+[1-9]\d{1,14}\z/, message: I18n.t('errors.contacts.phone_number.invalid') }
+            allow_blank: true, uniqueness: { scope: [:account_id] }
+            # format: { with: /\+[1-9]\d{1,14}\z/, message: I18n.t('errors.contacts.phone_number.invalid') }
   validates :name, length: { maximum: 255 }
 
   belongs_to :account
@@ -136,7 +136,6 @@ class Contact < ApplicationRecord
   end
 
   def discard_invalid_attrs
-    phone_number_format
     email_format
   end
 
