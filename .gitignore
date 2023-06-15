@@ -33,6 +33,18 @@ master.key
 public/uploads
 public/packs*
 
+!public/assets
+
+public/assets/*
+!public/assets/images
+
+!public/assets/administrate
+public/assets/administrate/*
+!public/assets/administrate/bot
+!public/assets/administrate/user
+
+vendor/cache
+
 # VIM files
 *.swp
 *.swo
