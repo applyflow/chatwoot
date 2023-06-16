@@ -82,6 +82,7 @@
       "conversation_creation": "Νέα συνομιλία",
       "conversation_assignment": "Η Συνομιλία Ανατέθηκε",
       "assigned_conversation_new_message": "Νέο Μήνυμα",
+      "participating_conversation_new_message": "Νέο Μήνυμα",
       "conversation_mention": "Αναφορά"
     }
   },
@@ -100,6 +101,7 @@
       "REPORTS": "Αναφορές",
       "CONVERSATION": "Συνομιλία",
       "CHANGE_ASSIGNEE": "Αλλαγή Αναδόχου",
+      "CHANGE_PRIORITY": "Change Priority",
       "CHANGE_TEAM": "Αλλαγή Ομάδας",
       "ADD_LABEL": "Προσθήκη ετικέτας στη συνομιλία",
       "REMOVE_LABEL": "Αφαίρεση ετικέτας από την συνομιλία",
@@ -125,6 +127,7 @@
       "GO_TO_NOTIFICATIONS": "Μετάβαση στις ειδοποιήσεις",
       "ADD_LABELS_TO_CONVERSATION": "Προσθήκη ετικέτας στη συνομιλία",
       "ASSIGN_AN_AGENT": "Εκχώρηση πράκτορα",
+      "ASSIGN_PRIORITY": "Assign priority",
       "ASSIGN_A_TEAM": "Εκχώρηση ομάδας",
       "MUTE_CONVERSATION": "Σίγαση Συνομιλίας",
       "UNMUTE_CONVERSATION": "Επαναφορά Συνομιλίας",

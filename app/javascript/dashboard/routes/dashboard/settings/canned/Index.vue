@@ -2,7 +2,7 @@
   <div class="column content-box">
     <woot-button
       color-scheme="success"
-      class-names="button--fixed-right-top"
+      class-names="button--fixed-top"
       icon="add-circle"
       @click="openAddPopup()"
     >
@@ -198,8 +198,10 @@ export default {
         .then(() => {
           this.showAlert(this.$t('CANNED_MGMT.DELETE.API.SUCCESS_MESSAGE'));
         })
-        .catch(() => {
-          this.showAlert(this.$t('CANNED_MGMT.DELETE.API.ERROR_MESSAGE'));
+        .catch(error => {
+          const errorMessage =
+            error?.message || this.$t('CANNED_MGMT.DELETE.API.ERROR_MESSAGE');
+          this.showAlert(errorMessage);
         });
     },
   },

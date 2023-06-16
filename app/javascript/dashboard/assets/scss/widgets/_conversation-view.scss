@@ -29,13 +29,13 @@
     }
 
     .modal-image {
-      max-height: 90%;
-      max-width: 90%;
+      max-height: 80vh;
+      max-width: 80vw;
     }
 
     .modal-video {
-      max-height: 75vh;
-      max-width: 100%;
+      max-height: 80vh;
+      max-width: 80vw;
     }
 
     &::before {
@@ -53,20 +53,11 @@
       width: 100%;
     }
   }
-
-  .video {
-    .modal-container {
-      width: auto;
-
-      .modal--close {
-        z-index: var(--z-index-low);
-      }
-    }
-  }
 }
 
 .conversations-list-wrap {
   @include flex;
+  border-right: 1px solid var(--s-50);
   flex-direction: column;
 
   .load-more-conversations {
@@ -81,8 +72,8 @@
   }
 
   .conversations-list {
-    overflow-y: auto;
     flex: 1 1;
+    overflow-y: auto;
 
     @include breakpoint(large up) {
       @include scroll-on-hover;
@@ -93,23 +84,7 @@
     @include flex;
     align-items: center;
     justify-content: space-between;
-    padding: $zero $zero $space-micro;
-
-    .page-title {
-      margin-bottom: $zero;
-      margin-left: $space-normal;
-    }
-
-    .status--filter {
-      background-color: $color-background-light;
-      border: 1px solid $color-border;
-      float: right;
-      font-size: $font-size-mini;
-      height: $space-medium;
-      margin: 0;
-      padding: $zero $space-medium $zero $space-normal;
-      width: auto;
-    }
+    padding: 0 var(--space-normal);
   }
 
   .content-box {
@@ -391,14 +366,6 @@
     text-decoration: underline;
   }
 
-  blockquote {
-    border-left-color: var(--s-300);
-
-    p {
-      color: var(--s-300);
-    }
-  }
-
   p:last-child {
     margin-bottom: 0;
   }
@@ -417,18 +384,6 @@
   a {
     color: var(--white);
     text-decoration: underline;
-  }
-
-  blockquote {
-    border-left-color: var(--w-100);
-
-    p {
-      color: var(--w-100);
-    }
-  }
-
-  pre code {
-    background: var(--color-background);
   }
 
   p:last-child {

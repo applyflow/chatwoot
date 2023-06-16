@@ -1,7 +1,7 @@
 <template>
   <div
     class="conversation-details-wrap"
-    :class="{ 'with-border-left': !isOnExpandedLayout }"
+    :class="{ 'with-border-right': !isOnExpandedLayout }"
   >
     <conversation-header
       v-if="currentChat.id"
@@ -23,7 +23,7 @@
         :show-badge="false"
       />
     </woot-tabs>
-    <div v-if="!activeIndex" class="messages-and-sidebar">
+    <div v-show="!activeIndex" class="messages-and-sidebar">
       <messages-view
         v-if="currentChat.id"
         :inbox-id="inboxId"
@@ -41,9 +41,11 @@
       </div>
     </div>
     <dashboard-app-frame
-      v-else
-      :key="currentChat.id + '-' + activeIndex"
-      :config="dashboardApps[activeIndex - 1].content"
+      v-for="(dashboardApp, index) in dashboardApps"
+      v-show="activeIndex - 1 === index"
+      :key="currentChat.id + '-' + dashboardApp.id"
+      :is-visible="activeIndex - 1 === index"
+      :config="dashboardApps[index].content"
       :current-chat="currentChat"
     />
   </div>
@@ -112,6 +114,7 @@ export default {
     },
     'currentChat.id'() {
       this.fetchLabels();
+      this.activeIndex = 0;
     },
   },
   mounted() {
@@ -144,8 +147,8 @@ export default {
   width: 100%;
   background: var(--color-background-light);
 
-  &.with-border-left {
-    border-left: 1px solid var(--color-border);
+  &.with-border-right {
+    border-right: 1px solid var(--color-border);
   }
 }
 
@@ -164,6 +167,7 @@ export default {
 }
 
 .conversation-sidebar-wrap {
+  border-right: 1px solid var(--color-border);
   height: auto;
   flex: 0 0;
   z-index: var(--z-index-low);

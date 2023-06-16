@@ -347,14 +347,14 @@
       },
       "EMAIL_PROVIDER": {
         "TITLE": "ارائه دهنده ایمیل خود را انتخاب کنید",
-        "DESCRIPTION": "Select an email provider from the list below. If you don't see your email provider in the list, you can select the other provider option and provide the IMAP and SMTP Credentials."
+        "DESCRIPTION": "یک ارائه دهنده ایمیل از لیست زیر انتخاب کنید. اگر ارائه دهنده ایمیل خود را در لیست نمی بینید، می توانید گزینه ارائه دهنده دیگر را انتخاب کنید و اعتبارنامه IMAP و SMTP را ارائه دهید."
       },
       "MICROSOFT": {
         "TITLE": "ایمیل مایکروسافت",
-        "DESCRIPTION": "Click on the Sign in with Microsoft button to get started. You will redirected to the email sign in page. Once you accept the requested permissions, you would be redirected back to the inbox creation step.",
+        "DESCRIPTION": "برای شروع روی دکمه Sign in with Microsoft کلیک کنید. شما به صفحه ورود به ایمیل هدایت خواهید شد. هنگامی که مجوزهای درخواستی را پذیرفتید، به مرحله ایجاد صندوق ورودی هدایت می شوید.",
         "EMAIL_PLACEHOLDER": "آدرس ایمیل را وارد کنید",
-        "HELP": "To add your Microsoft account as a channel, you need to authenticate your Microsoft account by clicking on 'Sign in with Microsoft' ",
-        "ERROR_MESSAGE": "There was an error connecting to Microsoft, please try again"
+        "HELP": "برای افزودن حساب مایکروسافت خود به عنوان کانال، باید با کلیک بر روی \"ورود به سیستم با مایکروسافت\" اکانت مایکروسافت خود را احراز هویت کنید.",
+        "ERROR_MESSAGE": "هنگام اتصال به مایکروسافت خطایی روی داد، لطفاً دوباره امتحان کنید"
       }
     },
     "DETAILS": {
@@ -439,7 +439,8 @@
       "LABEL": "امکانات",
       "DISPLAY_FILE_PICKER": "نمایش گزینه ضمیه فایل در ویجت",
       "DISPLAY_EMOJI_PICKER": "نمایش گزینه انتخاب ایموجی در ویجت",
-      "ALLOW_END_CONVERSATION": "به کاربران اجازه دهید مکالمه را از ویجت پایان دهند"
+      "ALLOW_END_CONVERSATION": "به کاربران اجازه دهید مکالمه را از ویجت پایان دهند",
+      "USE_INBOX_AVATAR_FOR_BOT": "از نام صندوق ورودی و آواتار برای ربات استفاده کنید"
     },
     "SETTINGS_POPUP": {
       "MESSENGER_HEADING": "اسکریپت ویجت",
@@ -463,6 +464,7 @@
       "AUTO_ASSIGNMENT_SUB_TEXT": "فعال کردن یا غیرفعال کردن واگذاری خودکار گفتگوها به ایجنت های عضو این صندوق ورودی.",
       "HMAC_VERIFICATION": "اعتبار سنجی کاربر",
       "HMAC_DESCRIPTION": "به منظور اعتبارسنجی هویت کاربر، می‌توانید یک «شناسه_هش» برای هر کاربر ارسال کنید. می‌توانید با استفاده از «شناسه» با کلید نشان داده شده در اینجا یک هش HMAC sha256 ایجاد کنید.",
+      "HMAC_LINK_TO_DOCS": "You can read more here.",
       "HMAC_MANDATORY_VERIFICATION": "مجبور کردن تأیید اعتبار هویت کاربر",
       "HMAC_MANDATORY_DESCRIPTION": "اگر فعال باشد، درخواست‌هایی که «identifier_hash» را ندارند رد می‌شوند.",
       "INBOX_IDENTIFIER": "شناسه صندوق ورودی",
@@ -472,11 +474,21 @@
       "ALLOW_MESSAGES_AFTER_RESOLVED": "اجازه دادن به پیام ها پس از حل شدن مکالمه",
       "ALLOW_MESSAGES_AFTER_RESOLVED_SUB_TEXT": "به کاربران اجازه دهید حتی پس از حل شدن مکالمه پیام ارسال کنند.",
       "WHATSAPP_SECTION_SUBHEADER": "این کلید API برای ادغام با API های WhatsApp استفاده می شود.",
-      "WHATSAPP_SECTION_UPDATE_SUBHEADER": "Enter the updated key to be used for the integration with the WhatsApp APIs.",
+      "WHATSAPP_SECTION_UPDATE_SUBHEADER": "کلید به روز شده را وارد کنید تا از آن برای ادغام با واتساپ API استفاده شود.",
       "WHATSAPP_SECTION_TITLE": "API key",
-      "WHATSAPP_SECTION_UPDATE_TITLE": "Update API Key",
-      "WHATSAPP_SECTION_UPDATE_PLACEHOLDER": "Enter the new API Key here",
-      "WHATSAPP_SECTION_UPDATE_BUTTON": "اعمال شود"
+      "WHATSAPP_SECTION_UPDATE_TITLE": "کلید API را به روز کنید",
+      "WHATSAPP_SECTION_UPDATE_PLACEHOLDER": "کلید API جدید را در اینجا وارد کنید",
+      "WHATSAPP_SECTION_UPDATE_BUTTON": "اعمال شود",
+      "WHATSAPP_WEBHOOK_TITLE": "رمز تأیید وب هوک",
+      "WHATSAPP_WEBHOOK_SUBHEADER": "این توکن برای تأیید صحت نقطه پایانی webhook استفاده می شود.",
+      "UPDATE_PRE_CHAT_FORM_SETTINGS": "به‌روزرسانی تنظیمات فرم قبل از گفتگو"
+    },
+    "HELP_CENTER": {
+      "LABEL": "مرکز راهنما",
+      "PLACEHOLDER": "مرکز راهنما را انتخاب کنید",
+      "SELECT_PLACEHOLDER": "مرکز راهنما را انتخاب کنید",
+      "REMOVE": "مرکز راهنما را حذف کنید",
+      "SUB_TEXT": "یک مرکز راهنما را با صندوق ورودی پیوست کنید"
     },
     "AUTO_ASSIGNMENT": {
       "MAX_ASSIGNMENT_LIMIT": "محدودیت تخصیص خودکار",
@@ -565,7 +577,7 @@
     },
     "MICROSOFT": {
       "TITLE": "مایکروسافت",
-      "SUBTITLE": "Reauthorize your MICROSOFT account"
+      "SUBTITLE": "حساب مایکروسافت خود را مجدداً تأیید کنید"
     },
     "SMTP": {
       "TITLE": "SMTP",

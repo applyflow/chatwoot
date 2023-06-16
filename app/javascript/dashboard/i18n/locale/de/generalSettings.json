@@ -82,6 +82,7 @@
       "conversation_creation": "Neue Konversation",
       "conversation_assignment": "Konversation zugewiesen",
       "assigned_conversation_new_message": "Neue Nachricht",
+      "participating_conversation_new_message": "Neue Nachricht",
       "conversation_mention": "Erwähnung"
     }
   },
@@ -100,6 +101,7 @@
       "REPORTS": "Berichte",
       "CONVERSATION": "Konversation",
       "CHANGE_ASSIGNEE": "Beauftragten ändern",
+      "CHANGE_PRIORITY": "Change Priority",
       "CHANGE_TEAM": "Team wechseln",
       "ADD_LABEL": "Label zur Konversation hinzufügen",
       "REMOVE_LABEL": "Label aus der Konversation entfernen",
@@ -125,6 +127,7 @@
       "GO_TO_NOTIFICATIONS": "Zu Benachrichtigungen",
       "ADD_LABELS_TO_CONVERSATION": "Label zur Konversation hinzufügen",
       "ASSIGN_AN_AGENT": "Einen Agent zuweisen",
+      "ASSIGN_PRIORITY": "Assign priority",
       "ASSIGN_A_TEAM": "Ein Team zuweisen",
       "MUTE_CONVERSATION": "Konversation stummschalten",
       "UNMUTE_CONVERSATION": "Konversation entstummen",

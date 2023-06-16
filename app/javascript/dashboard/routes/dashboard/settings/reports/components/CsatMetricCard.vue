@@ -1,5 +1,10 @@
 <template>
-  <div class="medium-2 small-6 csat--metric-card">
+  <div
+    class="medium-2 small-6 csat--metric-card"
+    :class="{
+      disabled: disabled,
+    }"
+  >
     <h3 class="heading">
       <span>{{ label }}</span>
       <fluent-icon
@@ -29,14 +34,24 @@ export default {
       type: String,
       required: true,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
 .csat--metric-card {
   margin: 0;
-  padding: var(--space-normal) var(--space-small) var(--space-normal)
-    var(--space-two);
+  padding: var(--space-normal);
+
+  &.disabled {
+    // grayscale everything
+    filter: grayscale(100%);
+    opacity: 0.3;
+    pointer-events: none;
+  }
 
   .heading {
     align-items: center;
@@ -57,6 +72,6 @@ export default {
 
 .csat--icon {
   color: var(--b-400);
-  margin-left: var(--space-micro);
+  margin: 0 var(--space-micro);
 }
 </style>

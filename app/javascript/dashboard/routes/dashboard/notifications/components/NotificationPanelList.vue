@@ -37,7 +37,7 @@
             </div>
             <div>
               <thumbnail
-                v-if="notificationItem.primary_actor.meta.assignee"
+                v-if="hasAssignee(notificationItem)"
                 :src="notificationItem.primary_actor.meta.assignee.thumbnail"
                 size="16px"
                 :username="notificationItem.primary_actor.meta.assignee.name"
@@ -127,6 +127,9 @@ export default {
         });
       }
     },
+    hasAssignee(notification) {
+      return notification.primary_actor.meta?.assignee;
+    },
   },
 };
 </script>
@@ -181,7 +184,7 @@ export default {
 .notification-type {
   font-size: var(--font-size-micro);
   padding: var(--space-micro) var(--space-smaller);
-  margin-left: var(--space-small);
+  margin: 0 var(--space-small);
   background: var(--s-50);
   border-radius: var(--border-radius-normal);
 }

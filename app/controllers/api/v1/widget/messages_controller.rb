@@ -17,7 +17,7 @@ class Api::V1::Widget::MessagesController < Api::V1::Widget::BaseController
       @message.update!(submitted_email: contact_email)
       ContactIdentifyAction.new(
         contact: @contact,
-        params: { email: contact_email }
+        params: { email: contact_email, name: contact_name }
       ).perform
     else
       @message.update!(message_update_params[:message])
@@ -48,7 +48,8 @@ class Api::V1::Widget::MessagesController < Api::V1::Widget::BaseController
   def message_finder_params
     {
       filter_internal_messages: true,
-      before: permitted_params[:before]
+      before: permitted_params[:before],
+      after: permitted_params[:after]
     }
   end
 
@@ -62,7 +63,7 @@ class Api::V1::Widget::MessagesController < Api::V1::Widget::BaseController
 
   def permitted_params
     # timestamp parameter is used in create conversation method
-    params.permit(:id, :before, :website_token, contact: [:name, :email], message: [:content, :referer_url, :timestamp, :echo_id])
+    params.permit(:id, :before, :after, :website_token, contact: [:name, :email], message: [:content, :referer_url, :timestamp, :echo_id])
   end
 
   def set_message

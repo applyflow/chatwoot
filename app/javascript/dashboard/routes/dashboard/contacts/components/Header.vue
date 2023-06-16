@@ -3,7 +3,7 @@
     <div class="table-actions-wrap">
       <div class="left-aligned-wrap">
         <woot-sidemenu-icon />
-        <h1 class="page-title">
+        <h1 class="page-title header-title">
           {{ headerTitle }}
         </h1>
       </div>
@@ -27,19 +27,28 @@
             {{ $t('CONTACTS_PAGE.SEARCH_BUTTON') }}
           </woot-button>
         </div>
-        <woot-button
-          v-if="hasActiveSegments"
-          class="margin-right-small clear"
-          color-scheme="alert"
-          icon="delete"
-          @click="onToggleDeleteSegmentsModal"
-        >
-          {{ $t('CONTACTS_PAGE.FILTER_CONTACTS_DELETE') }}
-        </woot-button>
+        <div v-if="hasActiveSegments">
+          <woot-button
+            class="margin-right-1 clear"
+            color-scheme="secondary"
+            icon="edit"
+            @click="onToggleEditSegmentsModal"
+          >
+            {{ $t('CONTACTS_PAGE.FILTER_CONTACTS_EDIT') }}
+          </woot-button>
+          <woot-button
+            class="margin-right-1 clear"
+            color-scheme="alert"
+            icon="delete"
+            @click="onToggleDeleteSegmentsModal"
+          >
+            {{ $t('CONTACTS_PAGE.FILTER_CONTACTS_DELETE') }}
+          </woot-button>
+        </div>
         <div v-if="!hasActiveSegments" class="filters__button-wrap">
           <div v-if="hasAppliedFilters" class="filters__applied-indicator" />
           <woot-button
-            class="margin-right-small clear"
+            class="margin-right-1 clear"
             color-scheme="secondary"
             data-testid="create-new-contact"
             icon="filter"
@@ -51,7 +60,7 @@
 
         <woot-button
           v-if="hasAppliedFilters && !hasActiveSegments"
-          class="margin-right-small clear"
+          class="margin-right-1 clear"
           color-scheme="alert"
           variant="clear"
           icon="save"
@@ -60,7 +69,7 @@
           {{ $t('CONTACTS_PAGE.FILTER_CONTACTS_SAVE') }}
         </woot-button>
         <woot-button
-          class="margin-right-small clear"
+          class="margin-right-1 clear"
           color-scheme="success"
           icon="person-add"
           data-testid="create-new-contact"
@@ -70,12 +79,23 @@
         </woot-button>
 
         <woot-button
+          v-if="isAdmin"
           color-scheme="info"
           icon="upload"
           class="clear"
           @click="onToggleImport"
         >
           {{ $t('IMPORT_CONTACTS.BUTTON_LABEL') }}
+        </woot-button>
+
+        <woot-button
+          v-if="isAdmin"
+          color-scheme="info"
+          icon="upload"
+          class="clear"
+          @click="onExportSubmit"
+        >
+          {{ $t('EXPORT_CONTACTS.BUTTON_LABEL') }}
         </woot-button>
       </div>
     </div>
@@ -84,8 +104,10 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import adminMixin from 'dashboard/mixins/isAdmin';
 
 export default {
+  mixins: [adminMixin],
   props: {
     headerTitle: {
       type: String,
@@ -112,6 +134,10 @@ export default {
       default: () => {},
     },
     onToggleImport: {
+      type: Function,
+      default: () => {},
+    },
+    onExportSubmit: {
       type: Function,
       default: () => {},
     },
@@ -144,6 +170,9 @@ export default {
     onToggleSegmentsModal() {
       this.$emit('on-toggle-save-filter');
     },
+    onToggleEditSegmentsModal() {
+      this.$emit('on-toggle-edit-filter');
+    },
     onToggleDeleteSegmentsModal() {
       this.$emit('on-toggle-delete-filter');
     },
@@ -167,6 +196,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+  min-width: var(--space-mega);
+
+  .header-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 var(--space-small);
+  }
 }
 
 .right-aligned-wrap {

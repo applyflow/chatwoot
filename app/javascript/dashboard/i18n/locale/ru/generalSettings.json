@@ -82,6 +82,7 @@
       "conversation_creation": "Новая беседа",
       "conversation_assignment": "Беседа назначена",
       "assigned_conversation_new_message": "Новое сообщение",
+      "participating_conversation_new_message": "Новое сообщение",
       "conversation_mention": "Упоминание"
     }
   },
@@ -100,6 +101,7 @@
       "REPORTS": "Отчёты",
       "CONVERSATION": "Диалоги",
       "CHANGE_ASSIGNEE": "Изменить Назначенного",
+      "CHANGE_PRIORITY": "Изменить приоритет",
       "CHANGE_TEAM": "Изменить команду",
       "ADD_LABEL": "Добавить метку в разговор",
       "REMOVE_LABEL": "Удалить метку из разговора",
@@ -125,6 +127,7 @@
       "GO_TO_NOTIFICATIONS": "Перейти к уведомлениям",
       "ADD_LABELS_TO_CONVERSATION": "Добавить метку в разговор",
       "ASSIGN_AN_AGENT": "Назначить сотрудника",
+      "ASSIGN_PRIORITY": "Назначить приоритет",
       "ASSIGN_A_TEAM": "Назначить команду",
       "MUTE_CONVERSATION": "Заглушить диалог",
       "UNMUTE_CONVERSATION": "Включить диалог",

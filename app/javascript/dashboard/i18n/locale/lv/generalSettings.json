@@ -82,6 +82,7 @@
       "conversation_creation": "Jauna saruna",
       "conversation_assignment": "Saruna Piešķirta",
       "assigned_conversation_new_message": "Jauns ziņojums",
+      "participating_conversation_new_message": "Jauns ziņojums",
       "conversation_mention": "Pieminēt"
     }
   },
@@ -100,6 +101,7 @@
       "REPORTS": "Pārskati",
       "CONVERSATION": "Saruna",
       "CHANGE_ASSIGNEE": "Mainīt Pilnvaroto",
+      "CHANGE_PRIORITY": "Mainīt prioritāti",
       "CHANGE_TEAM": "Mainīt Komandu",
       "ADD_LABEL": "Pievienot sarunai etiķeti",
       "REMOVE_LABEL": "Noņemt etiķeti no sarunas",
@@ -125,6 +127,7 @@
       "GO_TO_NOTIFICATIONS": "Doties uz Paziņojumiem",
       "ADD_LABELS_TO_CONVERSATION": "Pievienot sarunai etiķeti",
       "ASSIGN_AN_AGENT": "Piešķirt aģentu",
+      "ASSIGN_PRIORITY": "Piešķirt prioritāti",
       "ASSIGN_A_TEAM": "Piešķirt komandu",
       "MUTE_CONVERSATION": "Izslēgt sarunu",
       "UNMUTE_CONVERSATION": "Ieslēgt sarunu",
